@@ -9,8 +9,9 @@ uses
   Horse.Jhonson,
   System.SysUtils,
   Controllers.NFe.Management in 'src\controllers\Controllers.NFe.Management.pas',
-  Services.NFe.Management in 'src\services\Services.NFe.Management.pas' {DataModule1: TDataModule},
-  Controllers.NFe.Status in 'src\controllers\Controllers.NFe.Status.pas';
+  Services.NFe.Management in 'src\services\Services.NFe.Management.pas' {ServiceManagement: TDataModule},
+  Controllers.NFe.Status in 'src\controllers\Controllers.NFe.Status.pas',
+  Providers.NFe.NFeConfig in 'src\providers\Providers.NFe.NFeConfig.pas';
 
 begin
   const

@@ -1,6 +1,6 @@
 object ServiceManagement: TServiceManagement
-  Height = 480
-  Width = 640
+  Height = 284
+  Width = 396
   object ACBrNFe: TACBrNFe
     Configuracoes.Geral.SSLLib = libNone
     Configuracoes.Geral.SSLCryptLib = cryNone
@@ -12,7 +12,23 @@ object ServiceManagement: TServiceManagement
     Configuracoes.WebServices.AguardarConsultaRet = 0
     Configuracoes.WebServices.QuebradeLinha = '|'
     Configuracoes.RespTec.IdCSRT = 0
-    Left = 184
-    Top = 112
+    Left = 120
+    Top = 72
+  end
+  object Connection: TFDConnection
+    Params.Strings = (
+      'Database=nfe_db'
+      'User_Name=postgres'
+      'Password=postdba'
+      'Server=localhost'
+      'DriverID=PG')
+    Connected = True
+    Left = 192
+    Top = 72
+  end
+  object FDPhysPgDriverLink: TFDPhysPgDriverLink
+    VendorLib = 'C:\Program Files (x86)\PostgreSQL\psqlODBC\bin\libpq.dll'
+    Left = 192
+    Top = 136
   end
 end

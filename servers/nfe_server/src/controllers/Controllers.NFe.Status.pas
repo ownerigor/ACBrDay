@@ -20,7 +20,7 @@ end;
 
 procedure Registry;
 begin
-  THorse.Get('nfe/ping', GetStatusNFe)
+  THorse.Get('/ping', GetStatusNFe)
 end;
 
 end.

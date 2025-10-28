@@ -25,8 +25,8 @@ var
   LJSONObject: TJSONObject;
 begin
   LJSONObject := TJSONObject.Create;
-  LJSONObject.AddPair('api_nfe', CheckContainerStatus('url_container_nfe'));
-  LJSONObject.AddPair('api_boleto', CheckContainerStatus('url_container_boleto'));
+  LJSONObject.AddPair('api_nfe', CheckContainerStatus('http://localhost:9051'));
+  LJSONObject.AddPair('api_boleto', CheckContainerStatus('http://localhost:9051'));
   Res.Send<TJSONObject>(LJSONObject);
 end;
 
@@ -35,8 +35,8 @@ var
   LJSONObject: TJSONObject;
 begin
   LJSONObject := TJSONObject.Create;
-  LJSONObject.AddPair('notas_emitidas', TJSONNumber.Create(124)); //mock
-  LJSONObject.AddPair('boletos_gerados', TJSONNumber.Create(89)); //mock
+  LJSONObject.AddPair('notas_emitidas', TJSONNumber.Create(124));
+  LJSONObject.AddPair('boletos_gerados', TJSONNumber.Create(89));
   LJSONObject.AddPair('ultima_atualizacao', DateTimeToStr(Now));
   Res.Send<TJSONObject>(LJSONObject);
 end;
