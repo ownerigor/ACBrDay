@@ -66,12 +66,6 @@ begin
       LACBrBoletoFPDF.DirLogo := EmptyStr;
 
       Res.ContentType('application/pdf').SendFile(LFileName);
-
-
-      {Res.Send<TJSONObject>(
-        TJSONObject.Create
-          .AddPair('linha_digitavel', LTitulo.LinhaDigitada)
-          .AddPair('pdf', LFileName));}
     finally
         LACBrBoleto.Free;
         LACBrBoletoFPDF.Free;

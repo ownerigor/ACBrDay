@@ -16,4 +16,4 @@ ENTRYPOINT ["/usr/sbin/nfe/nfe_server"]
 # docker build -t ownerigor/nfe_server .
 
 # To create a container
-# docker run -p 9051:9051 -d ownerigor/nfe_server
+# docker run -p 9051:9051 -d --name nfe_server ownerigor/nfe_server

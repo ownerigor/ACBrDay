@@ -32,9 +32,9 @@ end;
 
 procedure TNFeConfigurator.Configure;
 begin
-  FACBrNFe.Configuracoes.Geral.SSLLib        := libWinCrypt;
-  FACBrNFe.Configuracoes.Geral.SSLCryptLib   := cryWinCrypt;
-  FACBrNFe.Configuracoes.Geral.SSLHttpLib    := httpWinHttp;
+  FACBrNFe.Configuracoes.Geral.SSLLib        := libCustom;
+  FACBrNFe.Configuracoes.Geral.SSLCryptLib   := cryNone;
+  FACBrNFe.Configuracoes.Geral.SSLHttpLib    := httpNone;
   FACBrNFe.Configuracoes.Geral.SSLXmlSignLib := xsLibXml2;
 
   FACBrNFe.Configuracoes.Geral.ModeloDF     := moNFe;

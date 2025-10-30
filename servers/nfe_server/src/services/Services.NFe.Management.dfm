@@ -15,20 +15,4 @@ object ServiceManagement: TServiceManagement
     Left = 120
     Top = 72
   end
-  object Connection: TFDConnection
-    Params.Strings = (
-      'Database=nfe_db'
-      'User_Name=postgres'
-      'Password=postdba'
-      'Server=localhost'
-      'DriverID=PG')
-    Connected = True
-    Left = 192
-    Top = 72
-  end
-  object FDPhysPgDriverLink: TFDPhysPgDriverLink
-    VendorLib = 'C:\Program Files (x86)\PostgreSQL\psqlODBC\bin\libpq.dll'
-    Left = 192
-    Top = 136
-  end
 end

@@ -26,7 +26,7 @@ var
 begin
   LJSONObject := TJSONObject.Create;
   LJSONObject.AddPair('api_nfe', CheckContainerStatus('http://localhost:9051'));
-  LJSONObject.AddPair('api_boleto', CheckContainerStatus('http://localhost:9051'));
+  LJSONObject.AddPair('api_boleto', CheckContainerStatus('http://localhost:9052'));
   Res.Send<TJSONObject>(LJSONObject);
 end;
 

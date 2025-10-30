@@ -6,9 +6,8 @@ RUN apt-get update -y && \
     apt-get autoremove -y
 WORKDIR /usr/sbin/boleto
 COPY ./Linux64/Debug/ ./
-COPY ./Schemas ./Schemas
 RUN chmod +x /usr/sbin/boleto/boleto_server
-ARG PORT=9051
+ARG PORT=9052
 EXPOSE $PORT
 ENTRYPOINT ["/usr/sbin/boleto/boleto_server"]
 
@@ -16,4 +15,4 @@ ENTRYPOINT ["/usr/sbin/boleto/boleto_server"]
 # docker build -t ownerigor/boleto_server .
 
 # To create a container
-# docker run -p 9051:9051 -d ownerigor/boleto_server
+# docker run -p 9052:9052 -d --name boleto_server ownerigor/boleto_server

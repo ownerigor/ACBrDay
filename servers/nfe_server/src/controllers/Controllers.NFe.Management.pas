@@ -16,12 +16,7 @@ begin
   LService := TServiceManagement.Create(nil);
   LConfig := TNFeConfigurator.Create(LService.ACBrNFe);
   LConfig.Configure;
-  Res.Send<TJSONObject>(TJSONObject.Create().AddPair('status', 'ok'));
-end;
-
-procedure GetNFeById(Req: THorseRequest; Res: THorseResponse; Next: TProc);
-begin
-
+  Res.Status(201).Send(TJSONObject.Create().AddPair('message', 'NFe emitida com sucesso...'));
 end;
 
 procedure PostCancelarNFe(Req: THorseRequest; Res: THorseResponse; Next: TProc);
@@ -32,12 +27,15 @@ begin
   LService := TServiceManagement.Create(nil);
   LConfig := TNFeConfigurator.Create(LService.ACBrNFe);
   LConfig.Configure;
+
+  //Rotina de cancelamento...
+
+  Res.Status(201).Send(TJSONObject.Create().AddPair('message', 'NFe cancelada com sucesso...'));
 end;
 
 procedure Registry;
 begin
   THorse.Post('nfe/emitir', PostEmitirNFe);
-  THorse.Get('nfe/:id', GetNFeById);
   THorse.Post('nfe/cancelar/:id', PostCancelarNFe);
 end;
 
