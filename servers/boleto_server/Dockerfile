@@ -6,7 +6,6 @@ RUN apt-get update -y && \
     apt-get autoremove -y
 WORKDIR /usr/sbin/boleto
 COPY ./Linux64/Debug/ ./
-RUN chmod +x /usr/sbin/boleto/boleto_server
 ARG PORT=9052
 EXPOSE $PORT
 ENTRYPOINT ["/usr/sbin/boleto/boleto_server"]

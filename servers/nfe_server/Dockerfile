@@ -7,7 +7,6 @@ RUN apt-get update -y && \
 WORKDIR /usr/sbin/nfe
 COPY ./Linux64/Debug/ ./
 COPY ./Schemas ./Schemas
-RUN chmod +x /usr/sbin/nfe/nfe_server
 ARG PORT=9051
 EXPOSE $PORT
 ENTRYPOINT ["/usr/sbin/nfe/nfe_server"]

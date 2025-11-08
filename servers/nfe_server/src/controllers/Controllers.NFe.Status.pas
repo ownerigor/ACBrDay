@@ -14,7 +14,7 @@ var
 begin
   LJSONObject := TJSONObject.Create;
   LJSONObject.AddPair('status', 'online');
-  LJSONObject.AddPair('nome', 'acbrday');
+  LJSONObject.AddPair('nome', 'igor');
   LJSONObject.AddPair('data_hora_atualizacao', DateTimeToStr(Now));
   Res.Send<TJSONObject>(LJSONObject);
 end;

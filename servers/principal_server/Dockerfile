@@ -6,7 +6,6 @@ RUN apt-get update -y && \
     apt-get autoremove -y
 WORKDIR /usr/sbin/principal
 COPY ./Linux64/Debug/ ./
-RUN chmod +x /usr/sbin/principal/principal_server
 ARG PORT=9050
 EXPOSE $PORT
 ENTRYPOINT ["/usr/sbin/principal/principal_server"]
