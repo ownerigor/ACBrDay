@@ -1,0 +1,38 @@
+services:
+  principal_server:
+    build:
+      context: ./principal_server
+      dockerfile: Dockerfile
+    container_name: principal_server
+    ports:
+      - "9050:9050"
+    environment:
+      - PORT=9050
+    restart: always
+
+  nfe_server:
+    build:
+      context: ./nfe_server
+      dockerfile: Dockerfile
+    container_name: nfe_server
+    ports:
+      - "9051:9051"
+    environment:
+      - PORT=9051
+    restart: always
+    depends_on:
+      - principal_server
+
+  boleto_server:
+    build:
+      context: ./boleto_server
+      dockerfile: Dockerfile
+    container_name: boleto_server
+    ports:
+      - "9052:9052"
+    environment:
+      - PORT=9052
+    restart: always
+    depends_on:
+      - principal_server
+      - nfe_server
